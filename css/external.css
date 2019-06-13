@@ -1,5 +1,5 @@
 body{
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Montserrat', sans-serif;
   	text-align: center;
   	background:#0F0E0E;
 	color: #767676;  
@@ -225,23 +225,46 @@ ul {
 	}
 	
 	.content{
-		margin-left:36px;
+		margin-left:35px;
+		padding: 0 65px;
 	}
 
 	.item{
+		display: inline-block;
+		vertical-align: top;
 		width:33%;
+		padding-left: 10px;
+		padding-right: 10px;
+		box-sizing: border-box;
 	}
 	.item-header{
 		background: #A5A5A5;
+		font-size: 24px;
+		text-align: center;
+		padding: 10px;
+	}
+	.item-header h3{
+		margin: 10px;
+	}
+	.item-header p{
+		margin: 10px;
+	}
+	.header-divider{
+		display: block;
+		width: 45px;
+		height: 1px;
+		background: #767676;
+		margin: 15px auto;
 	}
 	.item-description{
 		padding: 0 40px;
 	}
 	.item-description p {
 		border-bottom: 1px dashed white;
+		padding-bottom: 20px;
 	}
 	.item-description p:first-child{
-		color: red;
+		color: #337ab7;
 	}
 	.item-description p:last-child{
 		border-bottom: 0px ;
