@@ -178,7 +178,7 @@ h2{
 		transition-duration: .45s;
 		}
 	
-	.slider__cover{
+	.slider-cover{
 		 //overflow: hidden;
 		 position: relative;
 		 flex: 0 0 100%;
@@ -187,7 +187,7 @@ h2{
 		 
 		 }
 	
-	.slider__item {
+	.slider-item {
 		//flex: 0 0 100%;
 		width: 100%;
 		height: 100%;
@@ -195,7 +195,7 @@ h2{
 		
 		}
 	
-	 .slider__open{
+	 .slider-open{
 		 transform: translate(215px,0);
 		 
 	 }
@@ -203,7 +203,7 @@ h2{
 	 .menu li{
 		list-style: none;
 	} 
-	.slider__controls{
+	.slider-controls{
 		position: absolute;
 		z-index: 101;
 		//left:45%;
@@ -223,7 +223,7 @@ h2{
 		box-sizing: border-box;
 	}
 	
-	.switcher__active{
+	.switcher-active{
 		background-color: #fff;
 	}
 

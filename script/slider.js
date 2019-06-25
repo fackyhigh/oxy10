@@ -1,27 +1,33 @@
-var parent = document.querySelector('.slider');
+function Slider(){
+	var parent = document.querySelector('.slider');
+	var slider = parent.querySelector('.slider-cover');
+	var items = slider.querySelectorAll('.slider-item');
+	var controls = parent.querySelector('.slider-controls');
+	var cloneOfFirst = slider.firstElementChild.cloneNode(true);
+	var cloneOfLast = slider.lastElementChild.cloneNode(true);
+	var width = parent.offsetWidth;
+	var length = items.length;
+	var currentSlide = 0;
 
-///SwapSlider Bellow
-var currentSlide = 0;
-var slider = parent.querySelector('.slider-cover');
-var items = slider.querySelectorAll('.slider-item');
-var width = parent.offsetWidth;
-var controls = parent.querySelector('.slider-controls');
-var cloneOfFirst = slider.firstElementChild.cloneNode(true);
-slider.appendChild(cloneOfFirst);
-var items = slider.querySelectorAll('.slider-item');
-var length = items.length;
-
-for (var i = 0; i < length; i++){
-		items[i].style.transform = 'translateX('+(width*i)+'px)'; //Первичная расстановка
+	this.init = function(){ //Первичная расстановка
+		slider.appendChild(cloneOfFirst);
+		slider.insertBefore(cloneOfLast, slider.firstElementChild);
+		slider.style.transform = 'translateX(0px)';
+		for (var i = 0; i < length; i++){
+			items[i].style.transform = 'translateX('+(width*i)+'px)'; //Первичная расстановка
+		}
+		for (var i = 0; i < length-1; i++){
+			var element = document.createElement('li'); //Создание переключателей
+			element.classList.add('switcher');
+			controls.appendChild(element);	
+		}
+	}	
 }
-slider.style.transform = 'translateX(0px)';
-for (var i = 0; i < length-1; i++){
-		var element = document.createElement('li'); //Создание переключателей
-		element.classList.add('switcher');
-		controls.appendChild(element);	
-}
 
-var switcherCollection = controls.querySelectorAll('.switcher'); //Активируем первый переключатель по-дефолту
+let car = new Slider();
+car.init();
+
+/*var switcherCollection = controls.querySelectorAll('.switcher'); //Активируем первый переключатель по-дефолту
 
 
 switcherCollection[0].classList.add('switcher-active'); //Поиск активного переключателя, сравнивая индекс переключателя и текущий слайд
@@ -80,4 +86,4 @@ window.addEventListener('resize',function(){
 	console.log(width);
 });
 
-//https://codesandbox.io/s/625xzmv21k?codemirror=1&fontsize=14
+//https://codesandbox.io/s/625xzmv21k?codemirror=1&fontsize=14*/
