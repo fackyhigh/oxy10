@@ -15,6 +15,14 @@
     <div class="content">
         <div class="left-img"></div>
         <div class="right-img"></div>
+        <div class="price price-studio">
+            <p>Съёмка в студии</p>
+            <p>17000 ₽</p>
+        </div>
+        <div class="price price-street">
+            <p>Съёмка на улице</p>
+            <p>15000 ₽</p>
+        </div>
         <div class="description">
                 
                 <div class="description-top">
