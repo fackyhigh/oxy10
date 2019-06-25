@@ -12,13 +12,13 @@
 <body>
 	<?php include "menu.php" ?>
 	<div class="slider">
-        <div class="slider__cover">
-        	<div class="slider__item" style="background:url(img/1.jpg) center/cover;"></div>
-        	<div class="slider__item" style="background:url(img/2.jpg) center/cover;"></div>
-        	<div class="slider__item" style="background:url(img/3.jpg) center/cover;"></div>
-        	<div class="slider__item" style="background:url(img/4.jpg) center/cover;"></div>
+        <div class="slider-cover">
+        	<div class="slider-item" style="background:url(img/1.jpg) center/cover;"></div>
+        	<div class="slider-item" style="background:url(img/2.jpg) center/cover;"></div>
+        	<div class="slider-item" style="background:url(img/3.jpg) center/cover;"></div>
+        	<div class="slider-item" style="background:url(img/4.jpg) center/cover;"></div>
       	</div>
-      	<ul class="slider__controls"></ul>
+      	<ul class="slider-controls"></ul>
     </div>
   
 	<script src="script/menu.js"></script>

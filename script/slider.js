@@ -2,13 +2,13 @@ var parent = document.querySelector('.slider');
 
 ///SwapSlider Bellow
 var currentSlide = 0;
-var slider = parent.querySelector('.slider__cover');
-var items = slider.querySelectorAll('.slider__item');
+var slider = parent.querySelector('.slider-cover');
+var items = slider.querySelectorAll('.slider-item');
 var width = parent.offsetWidth;
-var controls = parent.querySelector('.slider__controls');
+var controls = parent.querySelector('.slider-controls');
 var cloneOfFirst = slider.firstElementChild.cloneNode(true);
 slider.appendChild(cloneOfFirst);
-var items = slider.querySelectorAll('.slider__item');
+var items = slider.querySelectorAll('.slider-item');
 var length = items.length;
 
 for (var i = 0; i < length; i++){
@@ -24,18 +24,18 @@ for (var i = 0; i < length-1; i++){
 var switcherCollection = controls.querySelectorAll('.switcher'); //Активируем первый переключатель по-дефолту
 
 
-switcherCollection[0].classList.add('switcher__active'); //Поиск активного переключателя, сравнивая индекс переключателя и текущий слайд
+switcherCollection[0].classList.add('switcher-active'); //Поиск активного переключателя, сравнивая индекс переключателя и текущий слайд
 var switcherActivator = function(){
 			for (var i = 0; i < length-1; i++){
 			if (currentSlide === length-1){
-				switcherCollection[0].classList.add('switcher__active');
-				switcherCollection[length-2].classList.remove('switcher__active');
+				switcherCollection[0].classList.add('switcher-active');
+				switcherCollection[length-2].classList.remove('switcher-active');
 			}
 			else if (currentSlide === i){
-				switcherCollection[i].classList.add('switcher__active');
+				switcherCollection[i].classList.add('switcher-active');
 			}
 			else{
-				switcherCollection[i].classList.remove('switcher__active');
+				switcherCollection[i].classList.remove('switcher-active');
 			}
 		}
 	};
