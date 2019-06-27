@@ -22,6 +22,6 @@
     </div>
   
 	<script src="script/menu.js"></script>
-	<script src="script/slider.js"></script>	
+	<script src="script/slider.1.js"></script>	
 </body>
 </html>

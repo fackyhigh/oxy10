@@ -169,37 +169,22 @@ h2{
 	}
 	
 	.slider{
-		display: flex;
-		justify-content: center;
-		height: 100vh;
-		overflow: hidden;
 		left: 35px;
-		transition-timing-function: ease;
-		transition-duration: .45s;
+		overflow: hidden;
+    	position: relative;
 		}
 	
 	.slider-cover{
-		 //overflow: hidden;
-		 position: relative;
-		 flex: 0 0 100%;
-		 transition-timing-function: ease;
-		transition-duration: 1s;
-		 
-		 }
-	
-	.slider-item {
-		//flex: 0 0 100%;
-		width: 100%;
-		height: 100%;
-		position: absolute;       
-		
+		display:flex; 
+		flex-wrap:nowrap;
+		//transition:transform 1s ease;
 		}
 	
-	 .slider-open{
-		 transform: translate(215px,0);
-		 
-	 }
-	
+	.slider-item {
+		flex: 0 0 100%;
+		height: 100vh;
+		}
+		
 	 .menu li{
 		list-style: none;
 	} 
