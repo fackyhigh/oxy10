@@ -23,9 +23,11 @@ function Slider(settings) {
 	  	slider.style.transform = `translateX(-${100 * currentSlide}%)`;
 		if (settings.arrows) {
 			icons.forEach((iconPath, index) => {
-				let element = document.createElement("img");
-				element.setAttribute("src",iconPath);
-				element.classList.add(`arrow-${index}`)
+				let element = document.createElement("object");
+				element.setAttribute("data",iconPath);
+				element.setAttribute("type","image/svg+xml");
+				element.classList.add("arrow", `arrow-${index}`);
+
 				parent.appendChild(element);
 			})
 

@@ -23,6 +23,23 @@ ul {
 h2{
 	font-weight: 500;
 }
+	.arrow{    
+		cursor: pointer;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		width: 50px;
+	}
+	.arrow:hover{
+		fill:#fff;
+	}
+	.arrow-0{
+		left: 0;
+	}
+	.arrow-1{
+		right: 0;
+	}
+
 	.sandwich{
 		position: absolute;
 		top:0;
