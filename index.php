@@ -25,6 +25,7 @@
 	<script src="script/slider.js"></script>
 	<script>let carousel = new Slider(
 		{
+			arrows:true,
 			infinite:true,
 			nav:true,
 			speed:1,

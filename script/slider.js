@@ -9,48 +9,62 @@ function Slider(settings) {
 	let switcherCollection, currentSlide;
 	let isTransitioning = false;
 	let { speed, timingFunction, infinite } = settings;
-  
+	let icons = [
+		"img/icons/left-arrow.svg",
+		"img/icons/right-arrow.svg",
+	];
+
 	const init = settings => {
-	  //Appending clonesf
-	  slider.appendChild(cloneOfFirst);
-	  slider.insertBefore(cloneOfLast, slider.firstElementChild);
-	  //Setting up first slide
-	  currentSlide = 1;
-	  slider.style.transform = `translateX(-${100 * currentSlide}%)`;
-  
+	  	//Appending clonesf
+	  	slider.appendChild(cloneOfFirst);
+	  	slider.insertBefore(cloneOfLast, slider.firstElementChild);
+	  	//Setting up first slide
+	  	currentSlide = 1;
+	  	slider.style.transform = `translateX(-${100 * currentSlide}%)`;
+		if (settings.arrows) {
+			icons.forEach((iconPath, index) => {
+				let element = document.createElement("img");
+				element.setAttribute("src",iconPath);
+				element.classList.add(`arrow-${index}`)
+				parent.appendChild(element);
+			})
+
+		};	
 	  //Creating control switchers
-	  if (settings.nav === true) {
-		for (let i = 0; i < length; i++) {
-		  var element = document.createElement("li");
-		  element.classList.add("switcher");
-		  element.addEventListener("click", () => this.goTo(i + 1));
-		  dots.appendChild(element);
-		}
-		//Making active first switcher by default
-		switcherCollection = dots.querySelectorAll(".switcher");
-		switcherCollection[0].classList.add("switcher-active");
-	  }
-	};
+		if (settings.nav === true) {
+			for (let i = 0; i < length; i++) {
+			  let element = document.createElement("li");
+			  element.classList.add("switcher");
+			  element.addEventListener("click", () => this.goTo(i + 1));
+			  dots.appendChild(element);
+			}
+			//Making active first switcher by default
+			switcherCollection = dots.querySelectorAll(".switcher");
+			switcherCollection[0].classList.add("switcher-active");
+			}
+		};
   
 	this.goTo = targetSlide => {
-	  if (!isTransitioning) {
-		if (targetSlide === length + 1) {
-		  if (infinite) {
-			currentSlide = 1;
-			translateToThenJump(targetSlide);
-		  }
-		} else if (targetSlide === 0) {
-		  if (infinite) {
-			currentSlide = length;
-			translateToThenJump(0);
-		  }
-		} else {
-		  currentSlide = targetSlide;
-		  translateTo(currentSlide);
-		}
-  
-		activateSwitchers();
-	  }
+		if (!isTransitioning) {
+			if (targetSlide === length + 1) {
+		  		if (infinite) {
+					currentSlide = 1;
+					translateToThenJump(targetSlide);
+		  		}
+			} 	
+			else if (targetSlide === 0) {
+				  	if (infinite) {
+						currentSlide = length;
+						translateToThenJump(0);
+				  	}
+			} 	
+			else {
+				  	currentSlide = targetSlide;
+				  	translateTo(currentSlide);
+					}
+			
+				activateSwitchers();
+	  	}
 	};
   
 	// next&previous
