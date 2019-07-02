@@ -22,6 +22,14 @@
     </div>
   
 	<script src="script/menu.js"></script>
-	<script src="script/slider.1.js"></script>	
+	<script src="script/slider.js"></script>
+	<script>let carousel = new Slider(
+		{
+			infinite:true,
+			nav:true,
+			speed:1,
+			timingFunction: 'ease'
+			});
+	</script>	
 </body>
 </html>

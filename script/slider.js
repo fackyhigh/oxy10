@@ -1,89 +1,88 @@
-function Slider(){
-	var parent = document.querySelector('.slider');
-	var slider = parent.querySelector('.slider-cover');
-	var items = slider.querySelectorAll('.slider-item');
-	var controls = parent.querySelector('.slider-controls');
-	var cloneOfFirst = slider.firstElementChild.cloneNode(true);
-	var cloneOfLast = slider.lastElementChild.cloneNode(true);
-	var width = parent.offsetWidth;
-	var length = items.length;
-	var currentSlide = 0;
-
-	this.init = function(){ //Первичная расстановка
-		slider.appendChild(cloneOfFirst);
-		slider.insertBefore(cloneOfLast, slider.firstElementChild);
-		slider.style.transform = 'translateX(0px)';
-		for (var i = 0; i < length; i++){
-			items[i].style.transform = 'translateX('+(width*i)+'px)'; //Первичная расстановка
+function Slider(settings) {
+	const parent = document.querySelector(".slider");
+	const slider = parent.querySelector(".slider-cover");
+	const dots = parent.querySelector(".slider-controls");
+	const cloneOfFirst = slider.firstElementChild.cloneNode(true);
+	const cloneOfLast = slider.lastElementChild.cloneNode(true);
+	const items = slider.querySelectorAll(".slider-item");
+	const length = items.length;
+	let switcherCollection, currentSlide;
+	let isTransitioning = false;
+	let { speed, timingFunction, infinite } = settings;
+  
+	const init = settings => {
+	  //Appending clonesf
+	  slider.appendChild(cloneOfFirst);
+	  slider.insertBefore(cloneOfLast, slider.firstElementChild);
+	  //Setting up first slide
+	  currentSlide = 1;
+	  slider.style.transform = `translateX(-${100 * currentSlide}%)`;
+  
+	  //Creating control switchers
+	  if (settings.nav === true) {
+		for (let i = 0; i < length; i++) {
+		  var element = document.createElement("li");
+		  element.classList.add("switcher");
+		  element.addEventListener("click", () => this.goTo(i + 1));
+		  dots.appendChild(element);
 		}
-		for (var i = 0; i < length-1; i++){
-			var element = document.createElement('li'); //Создание переключателей
-			element.classList.add('switcher');
-			controls.appendChild(element);	
-		}
-	}	
-}
-
-let car = new Slider();
-car.init();
-
-/*var switcherCollection = controls.querySelectorAll('.switcher'); //Активируем первый переключатель по-дефолту
-
-
-switcherCollection[0].classList.add('switcher-active'); //Поиск активного переключателя, сравнивая индекс переключателя и текущий слайд
-var switcherActivator = function(){
-			for (var i = 0; i < length-1; i++){
-			if (currentSlide === length-1){
-				switcherCollection[0].classList.add('switcher-active');
-				switcherCollection[length-2].classList.remove('switcher-active');
-			}
-			else if (currentSlide === i){
-				switcherCollection[i].classList.add('switcher-active');
-			}
-			else{
-				switcherCollection[i].classList.remove('switcher-active');
-			}
-		}
+		//Making active first switcher by default
+		switcherCollection = dots.querySelectorAll(".switcher");
+		switcherCollection[0].classList.add("switcher-active");
+	  }
 	};
-
-
-var swapSlides = function(){ //двигает слайды влево на 1 пока не дойдет до последнего элемента
-		slider.style.transition = "1s ease";
-		currentSlide >= length-1 ? false : currentSlide++;
-		width = parent.offsetWidth;
-		slider.style.transform = 'translateX('+width*(-currentSlide)+'px)';
-		jump();
-		switcherActivator();
-};
-
-var jump = function () {
-	slider.addEventListener('transitionend', function(){
-		currentSlide === length-1 ? currentSlide = 0 : currentSlide; //сбарсывает текущий слайд на 0 при достижении последнего  элемента
+  
+	this.goTo = targetSlide => {
+	  if (!isTransitioning) {
+		if (targetSlide === length + 1) {
+		  if (infinite) {
+			currentSlide = 1;
+			translateToThenJump(targetSlide);
+		  }
+		} else if (targetSlide === 0) {
+		  if (infinite) {
+			currentSlide = length;
+			translateToThenJump(0);
+		  }
+		} else {
+		  currentSlide = targetSlide;
+		  translateTo(currentSlide);
+		}
+  
+		activateSwitchers();
+	  }
+	};
+  
+	// next&previous
+	this.next = () => this.goTo(currentSlide + 1);
+	this.previous = () => this.goTo(currentSlide - 1);
+  
+	const translateTo = index => {
+	  slider.style.transition = `transform ${speed}s ${timingFunction}`;
+	  slider.style.transform = `translateX(-${100 * index}%)`;
+	};
+  
+	const translateToThenJump = targetSlide => {
+	  const jump = () => {
 		slider.style.transition = "none";
-		slider.style.transform = 'translateX('+width*(-currentSlide)+'px)';
-	}) 
-}
-
-var addControlClickHandler = function(controlItem,clickIndex){ // обработчик клика не пареключатели
-			controlItem.addEventListener('click',function(){
-				currentSlide = clickIndex-1;
-				swapSlides();
-				switcherActivator();
-			});
-}
-
-for (var i = 0; i<length-1;i++){
-	addControlClickHandler(switcherCollection[i],i)
-}
-
-//window.setInterval(swapSlides,3000);
-window.addEventListener('resize',function(){
-	width = parent.offsetWidth;
-	slider.style.transform = 'translateX('+width*(-currentSlide)+'px)';
-	for (var i = 0; i < length; i++){
-		items[i].style.transform = 'translateX('+(width*i)+'px)'; //Первичная расстановка
-}
-	console.log(width);
-});
-
-//https://codesandbox.io/s/625xzmv21k?codemirror=1&fontsize=14*/
+		slider.style.transform = `translateX(-${100 * currentSlide}%)`;
+		slider.removeEventListener("transitionend", jump);
+		isTransitioning = false;
+	  };
+  
+	  isTransitioning = true;
+	  slider.addEventListener("transitionend", jump);
+	  slider.style.transition = `transform ${speed}s ${timingFunction}`;
+	  slider.style.transform = `translateX(-${100 * targetSlide}%)`;
+	};
+  
+	//highlights current switcher
+	const activateSwitchers = () => {
+	  switcherCollection.forEach((item, index) => {
+		item.classList.toggle("switcher-active", index === currentSlide - 1);
+	  });
+	};
+  
+	init(settings);
+  }
+  
