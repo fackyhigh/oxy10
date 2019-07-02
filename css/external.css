@@ -24,22 +24,28 @@ h2{
 	font-weight: 500;
 }
 	.arrow{    
+		align-items: center;
+		background:rgba(0, 0, 0, 0);
+		color:#fff;
 		cursor: pointer;
+		display: flex;
+		font-size: 35px;
 		height: 100%;
+		opacity: 0.4;
 		position: absolute;
 		top: 0;
 		width: 50px;
 	}
 	.arrow:hover{
-		fill:#fff;
+		opacity: 1;
+		background:rgba(0, 0, 0, 0.2);
 	}
-	.arrow-0{
+	.arrows-left-arrow{
 		left: 0;
-	}
-	.arrow-1{
+	  }
+	.arrows-right-arrow{
 		right: 0;
 	}
-
 	.sandwich{
 		position: absolute;
 		top:0;
@@ -324,3 +330,39 @@ h2{
 	.price-street p:last-child{
 		font-weight: bold;
 	}
+
+	/*icon font bellow*/
+	@font-face {
+		font-family: 'arrows';
+		src:  url('../fonts/arrows.eot?7bk8tr');
+		src:  url('../fonts/arrows.eot?7bk8tr#iefix') format('embedded-opentype'),
+		  url('../fonts/arrows.ttf?7bk8tr') format('truetype'),
+		  url('../fonts/arrows.woff?7bk8tr') format('woff'),
+		  url('../fonts/arrows.svg?7bk8tr#arrows') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	  }
+	  
+	  [class^="arrows-"], [class*=" arrows-"] {
+		/* use !important to prevent issues with browser extensions that change fonts */
+		font-family: 'arrows' !important;
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+	  
+		/* Better Font Rendering =========== */
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	  }
+	  
+	  .arrows-left-arrow:before {
+		content: "\e900";
+		margin:0 auto;
+	  }
+	  .arrows-right-arrow:before {
+		content: "\e901";
+		margin:0 auto;
+	  }

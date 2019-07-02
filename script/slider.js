@@ -9,10 +9,10 @@ function Slider(settings) {
 	let switcherCollection, currentSlide;
 	let isTransitioning = false;
 	let { speed, timingFunction, infinite } = settings;
-	let icons = [
+	/*let icons = [
 		"img/icons/left-arrow.svg",
 		"img/icons/right-arrow.svg",
-	];
+	];*/
 
 	const init = settings => {
 	  	//Appending clonesf
@@ -21,16 +21,24 @@ function Slider(settings) {
 	  	//Setting up first slide
 	  	currentSlide = 1;
 	  	slider.style.transform = `translateX(-${100 * currentSlide}%)`;
+		//Creating navigation arrows
 		if (settings.arrows) {
-			icons.forEach((iconPath, index) => {
+			/*icons.forEach((iconPath, index) => {
 				let element = document.createElement("object");
 				element.setAttribute("data",iconPath);
 				element.setAttribute("type","image/svg+xml");
 				element.classList.add("arrow", `arrow-${index}`);
 
 				parent.appendChild(element);
-			})
-
+			})*/
+			for (let i = 0; i <= 1 ; i++){
+				let element = document.createElement("span");
+				element.classList.add("arrow", `arrows-${i < 1 ? 'left' : 'right'}-arrow`);
+				element.addEventListener("click", () => {
+					i < 1 ? this.previous() : this.next();
+				});
+				parent.appendChild(element);
+			}
 		};	
 	  //Creating control switchers
 		if (settings.nav === true) {
