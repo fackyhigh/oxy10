@@ -8,13 +8,13 @@ function Slider(settings) {
 	const length = items.length;
 	let switcherCollection, currentSlide;
 	let isTransitioning = false;
-	let { speed, timingFunction, infinite } = settings;
+	let { speed = 1, timingFunction = "ease", infinite = true, arrows = false, nav = true, autoplay = true, delay=5000} = settings;
 	/*let icons = [
 		"img/icons/left-arrow.svg",
 		"img/icons/right-arrow.svg",
 	];*/
 
-	const init = settings => {
+	const init = () => {
 	  	//Appending clonesf
 	  	slider.appendChild(cloneOfFirst);
 	  	slider.insertBefore(cloneOfLast, slider.firstElementChild);
@@ -22,7 +22,7 @@ function Slider(settings) {
 	  	currentSlide = 1;
 	  	slider.style.transform = `translateX(-${100 * currentSlide}%)`;
 		//Creating navigation arrows
-		if (settings.arrows) {
+		if (arrows) {
 			/*icons.forEach((iconPath, index) => {
 				let element = document.createElement("object");
 				element.setAttribute("data",iconPath);
@@ -33,7 +33,7 @@ function Slider(settings) {
 			})*/
 			for (let i = 0; i <= 1 ; i++){
 				let element = document.createElement("span");
-				element.classList.add("arrow", `arrows-${i < 1 ? 'left' : 'right'}-arrow`);
+				element.classList.add("arrows", `arrows-${i < 1 ? 'left' : 'right'}-arrow`);
 				element.addEventListener("click", () => {
 					i < 1 ? this.previous() : this.next();
 				});
@@ -41,7 +41,7 @@ function Slider(settings) {
 			}
 		};	
 	  //Creating control switchers
-		if (settings.nav === true) {
+		if (nav === true) {
 			for (let i = 0; i < length; i++) {
 			  let element = document.createElement("li");
 			  element.classList.add("switcher");
@@ -52,6 +52,10 @@ function Slider(settings) {
 			switcherCollection = dots.querySelectorAll(".switcher");
 			switcherCollection[0].classList.add("switcher-active");
 			}
+			//Setting autoplay
+			if (autoplay === true){
+			document.setInterval(this.next.bind(this), delay);
+		}
 		};
   
 	this.goTo = targetSlide => {
