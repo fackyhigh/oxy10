@@ -23,7 +23,7 @@ ul {
 h2{
 	font-weight: 500;
 }
-	.arrow{    
+	.arrows{    
 		align-items: center;
 		background:rgba(0, 0, 0, 0);
 		color:#fff;
@@ -36,7 +36,7 @@ h2{
 		top: 0;
 		width: 50px;
 	}
-	.arrow:hover{
+	.arrows:hover{
 		opacity: 1;
 		background:rgba(0, 0, 0, 0.2);
 	}
