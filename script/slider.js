@@ -54,7 +54,7 @@ function Slider(settings) {
 			}
 			//Setting autoplay
 			if (autoplay === true){
-			document.setInterval(this.next.bind(this), delay);
+			window.setInterval(this.next, delay);
 		}
 		};
   
