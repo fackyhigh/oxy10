@@ -13,9 +13,9 @@
     <div class="content">
     <div class="about-left half-screen"></div>
     <div class="about-right half-screen">
-        <h2 class="about">Привет! Меня зовут
-            Оксана Румянцева
-        </h2>
+        <h2 class="about">Привет! Меня зовут<br>Оксана Румянцева</h2>
+        <h3 class="about">Я — универсальный фотограф</h3>
+        <p class="about"></p>
     </div>
     </div>
 </body>

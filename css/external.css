@@ -9,7 +9,7 @@ body{
 	font-family: 'Montserrat', sans-serif;
   	text-align: center;
   	background:#0F0E0E;
-	color: #767676;  
+	color: A0A0A0;  
 	height: 100%;
   	margin:0;
 	padding: 0;
@@ -43,9 +43,28 @@ h2.about{
 	font-size: 32px;
 	height: 80px;
 	line-height: 125%;
-	margin: 0 auto;
+	margin: 0 auto 30px;
 	text-align: center;
-	width: calc(100vw / 12 * 4 - 10px);
+	width: calc((100vw - 70px) / 12 * 4 - 10px);
+}
+h3.about{
+	font-size: 22px;
+	height: 30px;
+	letter-spacing: 0.045em;
+	line-height: 140.02%;
+	margin: 0 auto;
+	width: calc((100vw - 70px) / 12 * 4 - 10px);
+}
+p.about{
+	border-bottom: 1px dashed rgba(160, 160, 160, .5);
+	border-top: 1px dashed rgba(160, 160, 160, .5);
+	height: 480.55px;
+	margin: 45px auto;
+	width: 778px;
+}
+.about{
+	font-style: normal;
+	font-weight: normal;
 }
 .about-left{
 	background: url(../img/about.png) center/cover;
@@ -269,9 +288,10 @@ h2.about{
 
 	
 	.content{
+		box-sizing: border-box;
 		display: flex;
 		height: 100%;
-		margin-left:35px;
+		padding:0 35px;
 		position: relative;
 		width: 100%;
 	}
