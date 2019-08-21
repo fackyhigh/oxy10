@@ -28,7 +28,8 @@
 			infinite:false,
 			nav:true,
 			speed:1,
-			timingFunction: 'ease'
+			timingFunction: 'ease',
+			arrows:true
 			});
 	</script>	
 </body>

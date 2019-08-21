@@ -5,9 +5,7 @@
           <li><a href="index.php">Главная</a></li>
           <li><a href="works.html">Портфолио</a></li>
           <li><a href="prices.php">Услуги и цены</a></li>
-          <li><a href="#">Контакты</a></li>
-          <li><a href="#">Советы</a></li>
-          <li><a href="#">Обучение</a></li>
+          <li><a href="about.php">Обо мне</a></li>
         </ul>
       </div>
       <div class="logo"><img src="img/OXY_LOGO.png" width="150" height="150"></div>

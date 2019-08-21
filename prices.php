@@ -7,14 +7,14 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link href="css/external.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Обо мне</title>
 </head>
 <body>
     <?php include "menu.php" ?>
-    
     <div class="content">
-        <div class="left-img"></div>
-        <div class="right-img"></div>
+        <h1 class="title">УСЛУГИ И ЦЕНЫ</h1>
+        <div class="prices-left half-screen"></div>
+        <div class="prices-right half-screen"></div>
         <div class="price price-studio">
             <p>Съёмка в студии</p>
             <p>17000 ₽</p>
@@ -26,7 +26,7 @@
         <div class="description">
                 
                 <div class="description-top">
-                    <h2>ЧТО ВКЛЮЧЕНО?</h2>
+                    <h2 class="prices">ЧТО ВКЛЮЧЕНО?</h2>
                     <p>До <b>двух часов</b> съёмки</p>
                     <p><b>20</b> фотографий в ретуши</p>
                     <p><b>Все остальные</b> фотографии в базовой цветокоррекции</p>

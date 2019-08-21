@@ -20,8 +20,41 @@ ul {
 	padding: 0;
 	margin:0;
 }
-h2{
+h1.title {
+	align-items: center;
+	color: rgba(255, 255, 255, 0.33);
 	font-weight: 500;
+	font-size: 48px;
+	height: 60px;
+	margin: 0;
+	letter-spacing: 0.11em;
+	left: calc(100% / 12 + 10px);
+	line-height: 147.4%;
+	position: absolute;
+	text-align: left;
+	top: 70px;
+	width: calc(100% / 12 * 5);
+	//z-index: 2;
+}
+h2.prices{
+	font-weight: 500;
+}
+h2.about{
+	font-size: 32px;
+	height: 80px;
+	line-height: 125%;
+	margin: 0 auto;
+	text-align: center;
+	width: calc(100vw / 12 * 4 - 10px);
+}
+.about-left{
+	background: url(../img/about.png) center/cover;
+}
+.about-right{
+	padding-top: 130px;
+}
+.half-screen{
+	width: 50%
 }
 	.arrows{    
 		align-items: center;
@@ -199,7 +232,6 @@ h2{
 	.slider-cover{
 		display:flex; 
 		flex-wrap:nowrap;
-		//transition:transform 1s ease;
 		}
 	
 	.slider-item {
@@ -235,13 +267,6 @@ h2{
 		background-color: #fff;
 	}
 
-	h1.title {
-		text-align: center;
-		font-size: 36px;
-		font-weight: 500;
-		color: #888888;
-		margin: 0;
-	}
 	
 	.content{
 		display: flex;
@@ -250,13 +275,11 @@ h2{
 		position: relative;
 		width: 100%;
 	}
-	.left-img{
+	.prices-left{
 		background: url(../img/studio.jpg) center/cover;
-		width: 50%;
 	}
-	.right-img{
+	.prices-right{
 		background: url(../img/street.jpg) center/cover;
-		width: 50%;
 	}
 	.description{
 		box-sizing: border-box;
@@ -317,18 +340,20 @@ h2{
 
 	}
 	.price-studio {
-		bottom: 85px;
-		left: 160px;
+		bottom: 70px;
+		left: calc(100% / 12 + 10px);
 	}
 	.price-street{
-		top: 85px;
-		right: 160px;
+		top: 70px;
+		right: calc(100% / 12 + 10px);
 	}
 	.price-studio p:last-child{
 		font-weight: bold;
+		text-align: left;
 	}
 	.price-street p:last-child{
 		font-weight: bold;
+		text-align: right;
 	}
 
 	/*icon font bellow*/
