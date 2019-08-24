@@ -40,27 +40,22 @@ h2.prices{
 	font-weight: 500;
 }
 h2.about{
+	flex-basis: 66.6666666667%;
 	font-size: 32px;
 	height: 80px;
 	line-height: 125%;
-	margin: 0 auto 30px;
+	margin-bottom: 30px;
+    max-width: 66.6666666667%;
 	text-align: center;
-	width: calc((100vw - 70px) / 12 * 4 - 10px);
 }
 h3.about{
+	flex-basis: 66.6666666667%;
 	font-size: 22px;
 	height: 30px;
 	letter-spacing: 0.045em;
 	line-height: 140.02%;
-	margin: 0 auto;
-	width: calc((100vw - 70px) / 12 * 4 - 10px);
-}
-p.about{
-	border-bottom: 1px dashed rgba(160, 160, 160, .5);
-	border-top: 1px dashed rgba(160, 160, 160, .5);
-	height: 480.55px;
-	margin: 45px auto;
-	width: 778px;
+	margin-bottom: 45px;
+	max-width: 66.6666666667%;
 }
 .about{
 	font-style: normal;
@@ -70,7 +65,34 @@ p.about{
 	background: url(../img/about.png) center/cover;
 }
 .about-right{
-	padding-top: 130px;
+    align-content: flex-start;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 130px 76px 0;
+}
+.about-text-wrapper{
+	border-bottom: 1px dashed rgba(160, 160, 160, .5);
+	border-top: 1px dashed rgba(160, 160, 160, .5);
+	display: flex;
+	padding: 45px 0;
+	width: 100%;
+}
+.about-text-col{
+	box-sizing: border-box;
+	flex-basis: 50%;
+	max-width: 50%;
+}
+.about-text{
+	font-size: 14px;
+	line-height: 150%;
+	text-align: left;
+}
+.about-text:first-child{
+	padding-right: 35px; 
+}
+.about-text:last-child{
+	padding-left: 35px; 
 }
 .half-screen{
 	width: 50%
