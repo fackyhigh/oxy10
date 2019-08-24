@@ -66,6 +66,7 @@ h3.about{
 }
 .about-right{
     align-content: flex-start;
+	box-sizing: border-box;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -88,10 +89,10 @@ h3.about{
 	line-height: 150%;
 	text-align: left;
 }
-.about-text:first-child{
+.about-text-col:first-child{
 	padding-right: 35px; 
 }
-.about-text:last-child{
+.about-text-col:last-child{
 	padding-left: 35px; 
 }
 .half-screen{
