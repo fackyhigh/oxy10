@@ -12,7 +12,7 @@
       <div class="social">
         <div class="social-wrapper">
         <a href="#"><span class="icon-instagram"></span></a>
-        <a href="#"><span class="icon-vk"></span>/a>
+        <a href="#"><span class="icon-vk1"></span></a>
         <a href="#"><span class="icon-whatsapp"></span></a>
         </div>
       </div>	

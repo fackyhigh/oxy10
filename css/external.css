@@ -22,17 +22,19 @@ ul {
 }
 h1.title {
 	align-items: center;
+	display: flex;
 	color: rgba(255, 255, 255, 0.33);
 	font-weight: 500;
 	font-size: 48px;
 	height: 60px;
 	margin: 0;
 	letter-spacing: 0.11em;
-	left: calc(100% / 12 + 10px);
+	left: calc(100% / 12 - 5px);
 	line-height: 147.4%;
 	position: absolute;
 	text-align: left;
 	top: 70px;
+	vertical-align: center;
 	width: calc(100% / 12 * 5);
 	//z-index: 2;
 }
@@ -61,6 +63,9 @@ h3.about{
 	font-style: normal;
 	font-weight: normal;
 }
+.title.about-title{
+	color: rgba(255, 255, 255, 0.14);
+}
 .about-left{
 	background: url(../img/about.png) center/cover;
 }
@@ -76,6 +81,7 @@ h3.about{
 	border-bottom: 1px dashed rgba(160, 160, 160, .5);
 	border-top: 1px dashed rgba(160, 160, 160, .5);
 	display: flex;
+	margin-bottom: 45px;
 	padding: 45px 0;
 	width: 100%;
 }
@@ -94,6 +100,10 @@ h3.about{
 }
 .about-text-col:last-child{
 	padding-left: 35px; 
+}
+.about-right a{
+	color: 3F8DBF;
+	text-decoration: none;
 }
 .half-screen{
 	width: 50%
@@ -228,7 +238,9 @@ h3.about{
 		border-bottom: 1px solid #333333;
 		border-top: 1px solid #333333;
 	}
-	
+	.social a {
+		text-decoration: none;
+	}
 	.social-wrapper{
 		width: 140px;
 		margin: 0 auto;
@@ -378,35 +390,39 @@ h3.about{
 		color: #fff;
 		font-size: 25px;
 		line-height: 30px;
+		height: 60px;
 		position: absolute;
-		
+		width: calc(100% / 12 * 2 - 20px);
 
 	}
 	.price-studio {
-		bottom: 70px;
-		left: calc(100% / 12 + 10px);
+		bottom: 76px;
+		left: calc(100% / 12 - 5px);
+		text-align: left;
+		
 	}
 	.price-street{
-		top: 70px;
-		right: calc(100% / 12 + 10px);
+		text-align: right;
+		top: 76px;
+		right: calc(100% / 12 - 5px);
 	}
 	.price-studio p:last-child{
 		font-weight: bold;
-		text-align: left;
+		
 	}
 	.price-street p:last-child{
 		font-weight: bold;
-		text-align: right;
+		
 	}
 
 	/*icon font bellow*/
 	@font-face {
 		font-family: 'icomoon';
-		src:  url('fonts/icomoon.eot?hsa1y');
-		src:  url('fonts/icomoon.eot?hsa1y#iefix') format('embedded-opentype'),
-		  url('fonts/icomoon.ttf?hsa1y') format('truetype'),
-		  url('fonts/icomoon.woff?hsa1y') format('woff'),
-		  url('fonts/icomoon.svg?hsa1y#icomoon') format('svg');
+		src:  url('../fonts/icomoon.eot?hsa1y');
+		src:  url('../fonts/icomoon.eot?hsa1y#iefix') format('embedded-opentype'),
+		  url('../fonts/icomoon.ttf?hsa1y') format('truetype'),
+		  url('../fonts/icomoon.woff?hsa1y') format('woff'),
+		  url('../fonts/icomoon.svg?hsa1y#icomoon') format('svg');
 		font-weight: normal;
 		font-style: normal;
 	  }
@@ -440,4 +456,7 @@ h3.about{
 	  }
 	  .icon-vk:before {
 		content: "\ea98";
+	  }
+	  .icon-vk1:before {
+		content: "\e903";
 	  }
