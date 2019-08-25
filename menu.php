@@ -11,9 +11,9 @@
       <div class="logo"><img src="img/OXY_LOGO.png" width="150" height="150"></div>
       <div class="social">
         <div class="social-wrapper">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-vk"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><span class="icon-instagram"></span></a>
+        <a href="#"><span class="icon-vk"></span>/a>
+        <a href="#"><span class="icon-whatsapp"></span></a>
         </div>
       </div>	
       <div class="copyright-text">©Copyright <a href="https://digency.com/">Digency</a> 2019 </div>
