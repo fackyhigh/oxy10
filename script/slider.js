@@ -33,7 +33,7 @@ function Slider(settings) {
 			})*/
 			for (let i = 0; i <= 1 ; i++){
 				let element = document.createElement("span");
-				element.classList.add("arrows", `arrows-${i < 1 ? 'left' : 'right'}-arrow`);
+				element.classList.add("arrows", `icon-chevron-thin-${i < 1 ? 'left' : 'right'}`);
 				element.addEventListener("click", () => {
 					i < 1 ? this.previous() : this.next();
 				});
