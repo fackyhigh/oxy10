@@ -22,7 +22,7 @@
             <p>15000 ₽</p>
         </div>
         <div class="description">
-                
+            <div class="description-front">    
                 <div class="description-top">
                     <h2 class="prices">ЧТО ВКЛЮЧЕНО?</h2>
                     <p>До <b>двух часов</b> съёмки</p>
@@ -36,9 +36,26 @@
                             что отдельные работы со съемки я могу использовать в своем портфолио на различных ресурсах. </i></p>
                     <div class="button">ЗАБРОНИРОВАТЬ</div>
                 </div>
-                
+            </div>
+            <div class="description-back">
+                <form action="" method="post">
+                    <h2 class="prices">ЗАБРОНИРОВАТЬ</h2>
+                    <input type="checkbox" name="studio" id="studio">
+                    <label for="studio">Аренда студии</label>
+                    <input type="text" name="name" id="name" class="text-form">
+                    <label for="name">Как вас зовут?</label>
+                    <input type="text" name="phone" id="phone" class="text-form">
+                    <label for="phone">Ваш номер телефона?</label>
+                    <input type="text" name="date" id="date" class="text-form">
+                    <label for="date">Дата съемки</label>
+                    <textarea name="message" id="" cols="30" rows="10" class="text-area-form"></textarea>
+                    <label for="message"></label>
+                    <input type="submit" value="" class="submit-form">
+                </form>
+            </div>    
         </div>
     </div>
 </body>
-<script src="script/menu.js"></script>	
+<script src="script/menu.js"></script>
+<script src='script/form.js'></script>	
 </html>

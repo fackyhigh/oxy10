@@ -20,6 +20,12 @@ ul {
 	padding: 0;
 	margin:0;
 }
+input{
+	//display: block;
+}
+label{
+	//display: block;
+}
 h1.title {
 	align-items: center;
 	display: flex;
@@ -339,17 +345,18 @@ h3.about{
 		background: url(../img/street.jpg) center/cover;
 	}
 	.description{
-		box-sizing: border-box;
-		width: 305px;
-		height: 590px;
-		color: #fff;
 		background: #3F8DBF;
-		position: absolute;
-		margin: auto;
+		bottom: 0;
+		box-sizing: border-box;
+		color: #fff;
+		height: 590px;
 		left: 0;
+		margin: auto;
+		position: absolute;
 		right: 0;
 		top: 0;
-		bottom: 0;
+		transform-style: preserve-3d;
+		width: 305px;
 	}	
 	.description-top{
 		background: #3887B9;
@@ -374,6 +381,10 @@ h3.about{
 		font-size: 10px;
 		line-height: 13px;
 		padding-bottom: 30px;
+	}
+	.description-back{
+		background: #3F8DBF;
+		transform: rotateY(180deg);
 	}
 	.button{
 		background: rgba(255, 255, 255, 0.1);
