@@ -344,19 +344,34 @@ h3.about{
 	.prices-right{
 		background: url(../img/street.jpg) center/cover;
 	}
-	.description{
-		background: #3F8DBF;
-		bottom: 0;
-		box-sizing: border-box;
-		color: #fff;
+	.description-container{
+		background-color: transparent;
+		width: 305px;
 		height: 590px;
 		left: 0;
 		margin: auto;
 		position: absolute;
 		right: 0;
 		top: 0;
+		bottom: 0;
+	}
+	.description-inner{
+		background: #3F8DBF;
+		
+		box-sizing: border-box;
+		color: #fff;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		transition: transform 0.8s;
+		
+
 		transform-style: preserve-3d;
-		width: 305px;
+		
+	}
+	.flipped.description-inner{
+		transform :rotateY(180deg);
 	}	
 	.description-top{
 		background: #3887B9;
@@ -382,10 +397,18 @@ h3.about{
 		line-height: 13px;
 		padding-bottom: 30px;
 	}
+	.description-back, .description-front{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+		transform-style: preserve-3d;
+	}
 	.description-back{
-		background: #3F8DBF;
 		transform: rotateY(180deg);
 	}
+
 	.button{
 		background: rgba(255, 255, 255, 0.1);
 		cursor: pointer;
@@ -399,6 +422,7 @@ h3.about{
 	.button:hover{
 		background: rgba(255, 255, 255, 0.3);
 	}
+	
 	.price{
 		color: #fff;
 		font-size: 25px;
