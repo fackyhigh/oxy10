@@ -344,8 +344,7 @@ h3.about{
 	.prices-right{
 		background: url(../img/street.jpg) center/cover;
 	}
-	.description-container{
-		background-color: transparent;
+	.flip-card{
 		width: 305px;
 		height: 590px;
 		left: 0;
@@ -355,9 +354,7 @@ h3.about{
 		top: 0;
 		bottom: 0;
 	}
-	.description-inner{
-		background: #3F8DBF;
-		
+	.flip-card-inner{
 		box-sizing: border-box;
 		color: #fff;
 		position: relative;
@@ -365,34 +362,31 @@ h3.about{
 		height: 100%;
 		text-align: center;
 		transition: transform 0.8s;
-		
-
 		transform-style: preserve-3d;
-		
 	}
-	.flipped.description-inner{
+	.flipped.flip-card-inner{
 		transform :rotateY(180deg);
 	}	
-	.description-top{
+	.description-front-top{
 		background: #3887B9;
 		padding: 40px 30px 10px;
 	}
-	.description-top h2{
+	.description-front-top h2{
 		padding-bottom: 10px;
-		font-weight: bold;
+		font-weight: 500;
 		font-size: 24px;
 		line-height: 29px;
 	}
-	.description-top p{
+	.description-front-top p{
 		padding: 10px 0;
 		font-size: 14px;
 		line-height: 17px;
 	}
-	.description-bottom{
+	.description-front-bottom{
 		background: #3F8DBF;
 		padding: 30px;
 	}
-	.description-bottom p {
+	.description-front-bottom p {
 		font-size: 10px;
 		line-height: 13px;
 		padding-bottom: 30px;
@@ -406,7 +400,94 @@ h3.about{
 		transform-style: preserve-3d;
 	}
 	.description-back{
+		background: #3887B9;
+		padding: 40px 30px 30px;
 		transform: rotateY(180deg);
+	}
+	.description-back h2{
+		margin-bottom: 30px;
+	}
+	.description-back .group{ 
+		align-items: center;
+		display: flex;
+		margin-bottom:25px; 
+		position:relative; 
+		text-align: left;
+	  }
+	.description-back .group input{
+		background: none;
+		border:none;
+		color: #FFFFFF;
+		display:block;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 17px;
+		width: 100%;
+	}
+	.description-back .group label{
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 17px;
+		left:1px;
+		position:absolute;
+		pointer-events:none;
+		//top:7px;
+		transition:0.3s ease all; 
+		-moz-transition:0.3s ease all; 
+		-webkit-transition:0.3s ease all;
+	}
+	.description-back .text-group{
+		height: 30px;
+		width: 100%;
+	}
+	.description-back input[type="text"]:focus ~ label, .description-back input[type="text"]:valid ~ label{
+		top:-15px;
+		font-size: 11px;
+	  }
+	.description-back .check-group{
+		width: 100%;
+		height: 20px;
+	}
+	.description-back .check-group input{
+		border: 1px solid #FFFFFF;
+		border-radius: 1px;
+		height: 20px;
+		width: 20px;
+		-webkit-appearance: none;
+		transition: all .28s ease;
+	}
+	.description-back .check-group label{
+		left: 28px;
+	}
+	input[type="checkbox"]:after {
+		content: '';
+		position: absolute;
+		top: 1px;
+		left: 6px;
+		width: 6px;
+		height: 12px;
+		background-color: transparent;
+		border-bottom: 2px solid #3887B9;
+		border-right: 2px solid #3887B9;
+		opacity: 0;
+		transform: rotate(45deg);
+		z-index: 2;
+		transition: all .28s ease;
+	}
+	.description-back .check-group input:checked{
+		background: #FFFFFF;
+	}
+	input[type="checkbox"]:checked:after{
+		border-color: #3887B9;
+		opacity: 100;
+	}
+	.description-back .group input:focus{
+		outline: none;
+	}
+	.description-back .text-group{
+		border-bottom: 1px solid #fff;
 	}
 
 	.button{
