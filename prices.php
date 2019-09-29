@@ -8,6 +8,7 @@
     <link href="css/flatpickr.css" rel="stylesheet">
     <script src="script/flatpickr.js"></script>
     <script src="script/ru.js"></script>
+    <script src="script/cleave.min.js"></script>
     <title>Услуги и цены</title>
 </head>
 <body>
@@ -49,19 +50,19 @@
                             <label for="studio">Аренда студии</label>
                         </div>
                         <div class="group text-group">
-                            <input type="text" name="name" id="name" class="text-form" required>
+                            <input type="text" name="name" id="name" class="text-input" required>
                             <label for="name">Как вас зовут?</label>
                         </div>
                         <div class="group text-group">
-                            <input type="text" name="phone" id="phone" class="text-form" required>
+                            <input type="text" name="phone" id="phone" class="text-input" required>
                             <label for="phone">Ваш номер телефона?</label>
                         </div>
                         <div class="group text-group datepicker">
-                            <input type="text" name="date" id="datepicker" class="date-form" data-input required>
+                            <input type="text" name="date" id="datepicker" class="date-input" data-input required>
                             <label for="datepicker">Дата съемки</label>
-                            <button id="calendar" data-toggle>CAL</button>                            
+                            <button type="button" id="calendar" data-toggle>CAL</button>                            
                         </div>
-                        <textarea name="message" id="" cols="30" rows="10" class="text-area-form"></textarea>
+                        <textarea name="message" id="" cols="30" rows="10" class="text-area-input"></textarea>
                         <label for="message">Введите ваше сообщение</label>
                         <input type="submit" class="button submit-form" value="ЗАБРОНИРОВАТЬ">
                     </form>
@@ -77,8 +78,13 @@
     allowInput: true,
     dateFormat: "d.m.Y",
     "locale": "ru"
-      });</script>
+      });
+</script>
 <script>
-  
+  var cleave = new Cleave('.date-input', {
+    date: true,
+    delimiter: '.',
+    datePattern: ['d', 'm', 'Y']
+});
   </script>
 </html>
