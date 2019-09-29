@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="css/external.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/foopicker.css">
+    <link href="css/flatpickr.css" rel="stylesheet">
+    <script src="script/flatpickr.js"></script>
+    <script src="script/ru.js"></script>
     <title>Услуги и цены</title>
 </head>
 <body>
@@ -54,13 +56,14 @@
                             <input type="text" name="phone" id="phone" class="text-form" required>
                             <label for="phone">Ваш номер телефона?</label>
                         </div>
-                        <div class="group text-group">
-                            <input type="text" name="date" id="datepicker" class="date-form datepicker-here" required>
+                        <div class="group text-group datepicker">
+                            <input type="text" name="date" id="datepicker" class="date-form" data-input required>
                             <label for="datepicker">Дата съемки</label>
+                            <button id="calendar" data-toggle>CAL</button>                            
                         </div>
                         <textarea name="message" id="" cols="30" rows="10" class="text-area-form"></textarea>
                         <label for="message">Введите ваше сообщение</label>
-                        <input type="submit" value="" class="submit-form">
+                        <input type="submit" class="button submit-form" value="ЗАБРОНИРОВАТЬ">
                     </form>
                 </div>    
             </div>
@@ -68,13 +71,14 @@
     </div>
 </body>
 <script src="script/menu.js"></script>
-<script src="script/foopicker.js"></script>
+<script>const calendar = flatpickr(".datepicker", {
+    clickOpens: false,
+    wrap: true,
+    allowInput: true,
+    dateFormat: "d.m.Y",
+    "locale": "ru"
+      });</script>
 <script>
-    var weeks = ['Пн', 'Вт', 'Ср', 'Чт', 'F', 'S', 'S'];
-    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    var foopicker = new FooPicker({
-      id: 'datepicker',
-      dateFormat: 'dd/MM/yyyy'
-    });
+  
   </script>
 </html>

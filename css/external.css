@@ -1,4 +1,5 @@
 *{
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
@@ -489,16 +490,26 @@ h3.about{
 	.description-back .text-group{
 		border-bottom: 1px solid #fff;
 	}
-
+	input[type="submit"]{
+		color: #fff;
+		font-family: 'Montserrat', sans-serif;		
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 17px;
+		letter-spacing: 0.145em;
+	}
 	.button{
 		background: rgba(255, 255, 255, 0.1);
-		cursor: pointer;
-		width: 243px;
-		height: 40px;
 		border: 2px solid #FFFFFF;
+		box-sizing: border-box;
+		cursor: pointer;
+		font-weight: bold;
+		height: 40px;
+		letter-spacing: 0.145em;
+		line-height: 40px;
 		text-align: center;
 		vertical-align: middle;
-		line-height: 40px;
+		width: 100%;
 	}
 	.button:hover{
 		background: rgba(255, 255, 255, 0.3);
