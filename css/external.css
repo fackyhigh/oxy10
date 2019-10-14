@@ -46,7 +46,12 @@ h1.title {
 	//z-index: 2;
 }
 h2.prices{
-	font-weight: 500;
+	font-size: 22px;
+	font-style: normal;
+	font-weight: bold;
+	letter-spacing: 0.02em;
+	line-height: 27px;
+	opacity: 0.4;
 }
 h2.about{
 	flex-basis: 66.6666666667%;
@@ -405,6 +410,18 @@ h3.about{
 		padding: 40px 30px 30px;
 		transform: rotateY(180deg);
 	}
+	.description-back .icon-Arrow{
+    	border: 2px solid #FFFFFF;
+    	font-size: 40px;
+    	height: 40px;
+    	position: absolute;
+    	right: -20px;
+		top: -21px;
+    	width: 40px;
+	}
+	.description-back .icon-Arrow:hover{
+		background:rgba(255, 255, 255, 0.1)
+	}
 	.description-back h2{
 		margin-bottom: 30px;
 	}
@@ -414,6 +431,7 @@ h3.about{
 		margin-bottom:25px; 
 		position:relative; 
 		text-align: left;
+		width: 100%;
 	  }
 	.description-back .group input{
 		background: none;
@@ -434,16 +452,21 @@ h3.about{
 		left:1px;
 		position:absolute;
 		pointer-events:none;
-		//top:7px;
 		transition:0.3s ease all; 
 		-moz-transition:0.3s ease all; 
 		-webkit-transition:0.3s ease all;
 	}
 	.description-back .text-group{
 		height: 30px;
-		width: 100%;
 	}
-	.description-back input[type="text"]:focus ~ label, .description-back input[type="text"]:valid ~ label{
+	.description-back .textarea-group label{
+		top: 0px;
+	}
+	.description-back .icon-small-calendar{
+		font-size: 20px;
+	}
+	.description-back input[type="text"]:focus ~ label, .description-back input[type="text"]:valid ~ label,
+	.description-back textarea:focus ~ label {
 		top:-15px;
 		font-size: 11px;
 	  }
@@ -498,6 +521,43 @@ h3.about{
 		line-height: 17px;
 		letter-spacing: 0.145em;
 	}
+	.text-area-input{
+		box-shadow: none;
+		border: none;
+		border-bottom: 1px solid #FFFFFF;
+		border-right: 1px solid #FFFFFF;
+		background-color: transparent;
+		font-family: 'Montserrat', sans-serif;	
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 17px;
+		max-height: 176px;
+        color: #FFFFFF;    
+		outline: 0;
+		padding: 1rem 0;
+		resize: none;
+		width: 100%;
+	}
+	  textarea::-webkit-input-placeholder {
+		color: #FFFFFF;
+	  }
+	  
+	  textarea:-moz-placeholder { /* Firefox 18- */
+		color: #FFFFFF;  
+	  }
+	  
+	  textarea::-moz-placeholder {  /* Firefox 19+ */
+		color: #FFFFFF;  
+	  }
+	  
+	  textarea:-ms-input-placeholder {
+		color: #FFFFFF;  
+	  }
+	  
+	  textarea::placeholder {
+		color: #FFFFFF;  
+	  }
 	.button{
 		background: rgba(255, 255, 255, 0.1);
 		border: 2px solid #FFFFFF;
@@ -571,21 +631,27 @@ h3.about{
 		-moz-osx-font-smoothing: grayscale;
 	  }
 	  
-	  .icon-chevron-thin-right:before {
-		content: "\e902";
+	  .icon-Arrow:before {
+		content: "\e900";
 	  }
-	  .icon-chevron-thin-left:before {
+	  .icon-small-calendar:before {
 		content: "\e901";
 	  }
 	  .icon-instagram:before {
-		content: "\e900";
+		content: "\e902";
+	  }
+	  .icon-chevron-thin-left:before {
+		content: "\e903";
+	  }
+	  .icon-chevron-thin-right:before {
+		content: "\e904";
+	  }
+	  .icon-vk1:before {
+		content: "\e905";
 	  }
 	  .icon-whatsapp:before {
 		content: "\ea93";
 	  }
 	  .icon-vk:before {
 		content: "\ea98";
-	  }
-	  .icon-vk1:before {
-		content: "\e903";
 	  }

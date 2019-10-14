@@ -9,6 +9,7 @@
     <script src="script/flatpickr.js"></script>
     <script src="script/ru.js"></script>
     <script src="script/cleave.min.js"></script>
+    <script src="script/cleave-phone.ru.js"></script>
     <title>Услуги и цены</title>
 </head>
 <body>
@@ -43,6 +44,7 @@
                     </div>
                 </div>
                 <div class="description-back">
+                    <span class="icon-Arrow" onclick="document.querySelector('.flip-card-inner').classList.remove('flipped')"></span>
                     <form action="" method="post">
                         <h2 class="prices">ЗАБРОНИРОВАТЬ</h2>
                         <div class="group check-group">
@@ -60,10 +62,12 @@
                         <div class="group text-group datepicker">
                             <input type="text" name="date" id="datepicker" class="date-input" data-input required>
                             <label for="datepicker">Дата съемки</label>
-                            <button type="button" id="calendar" data-toggle>CAL</button>                            
+                            <span class="icon-small-calendar" data-toggle></span>
                         </div>
-                        <textarea name="message" id="" cols="30" rows="10" class="text-area-input"></textarea>
-                        <label for="message">Введите ваше сообщение</label>
+                        <div class="group textarea-group">
+                            <textarea name="message" id="" cols="30" rows="10" class="text-area-input" placeholder="Ваше сообщение"></textarea>
+                            <!--<label for="message">Ваше сообщение</label>-->
+                        </div>
                         <input type="submit" class="button submit-form" value="ЗАБРОНИРОВАТЬ">
                     </form>
                 </div>    
@@ -77,14 +81,25 @@
     wrap: true,
     allowInput: true,
     dateFormat: "d.m.Y",
-    "locale": "ru"
+    "locale": "ru",
+    disableMobile: "true"
       });
 </script>
 <script>
-  var cleave = new Cleave('.date-input', {
+    var cleave = new Cleave('.date-input', {
     date: true,
     delimiter: '.',
-    datePattern: ['d', 'm', 'Y']
+    datePattern: ['d', 'm', 'Y'],
+    dateMin: '2019-01-01',
+    dateMax: '2025-12-31'
 });
   </script>
+  <script>
+    var cleave = new Cleave('#phone', {
+    phone: true,
+    phoneRegionCode: 'RU',
+    delimiter: '-',
+    
+      });
+        </script>
 </html>
